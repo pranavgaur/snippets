@@ -1,6 +1,7 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
   "Resources": {
+
     "MyAppBucket": {
       "Type": "AWS::S3::Bucket",
       "Properties": {
@@ -27,6 +28,7 @@
         }
       }
     },
+
     "UserTable": {
       "Type": "AWS::DynamoDB::Table",
       "Properties": {
@@ -58,6 +60,7 @@
         
       }
     },
+
     "ApplicationUserPool": {
       "Type": "AWS::Cognito::UserPool",
       "Properties": {
@@ -134,6 +137,7 @@
         
       }
     },
+
     "ApplicationClient": {
       "Type": "AWS::Cognito::UserPoolClient",
       "Properties": {
@@ -156,6 +160,7 @@
         }
       }
     },
+
     "ApplicationIdentityPool": {
       "Type": "AWS::Cognito::IdentityPool",
       "Properties": {
@@ -178,6 +183,7 @@
         "IdentityPoolName": "Application_Identity_Pool"
       }
     },
+
     "CognitoUnAuthorizedRole": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -226,6 +232,7 @@
         "RoleName": "ApplicationCognitoUnAuthorizedRole"
       }
     },
+
     "CognitoAuthorizedRole": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -282,6 +289,7 @@
         "RoleName": "ApplicationCognitoAuthorizedRole"
       }
     },
+
     "IdentityPoolRoleMapping": {
       "Type": "AWS::Cognito::IdentityPoolRoleAttachment",
       "Properties": {
@@ -329,6 +337,7 @@
         }
       }
     },
+
     "TestIDPoolRole": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -359,6 +368,7 @@
         "RoleName": "IDPoolAdminRole"
       }
     },
+
     "UserpoolTestGroup": {
       "Type": "AWS::Cognito::UserPoolGroup",
       "Properties": {
@@ -376,12 +386,14 @@
         }
       }
     },
+
     "TestSNSPolicy": {
       "Type": "AWS::SNS::Topic",
       "Properties": {
         "TopicName": "TestSNSTopicName"
       }
     },
+
     "LambdaExecutionRole": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -422,6 +434,7 @@
         "RoleName": "Basic-Lambda-Execution-Role"
       }
     },
+
     "TestLambdaLayer": {
       "Type": "AWS::Lambda::LayerVersion",
       "Properties": {
@@ -435,6 +448,7 @@
         "LayerName": "Application-Test-Layer"
       }
     },
+
     "TestLambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -460,6 +474,7 @@
         "Timeout": 900
       }
     },
+
     "TestApiGateway": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
