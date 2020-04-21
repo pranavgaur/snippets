@@ -1,0 +1,121 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="well">
+            <h4>Account Settings</h4>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="well">
+            <h5><strong>Update Password</strong></h5>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <form class="form-horizontal" [formGroup]="passwordUpdateForm">
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="old-password">Old Password:</label>
+                            <div class="col-sm-8">
+                                <input required type="password" class="form-control" id="oldpassword" name="oldpassword"
+                                    formControlName="oldpassword">
+                                <small
+                                    *ngIf="(passwordUpdateForm.controls.oldpassword.dirty || passwordUpdateForm.controls.oldpassword.touched) && (passwordUpdateForm.controls.oldpassword.errors !== null && passwordUpdateForm.controls.oldpassword.errors.required)"
+                                    id="formerror" class="form-text text-muted" style="color: red;">
+                                    Required
+                                </small>
+                                <!-- <div class="alert alert-danger">
+
+                                    <div>
+                                        Name is required.
+                                    </div>
+
+
+                                </div> -->
+
+                                <!-- <div *ngIf="passwordUpdateForm.controls.oldpassword.invalid && (passwordUpdateForm.controls.oldpassword.dirty || passwordUpdateForm.controls.oldpassword.touched)"
+                                    class="alert alert-danger">
+
+                                    <div *ngIf="passwordUpdateForm.controls.oldpassword.errors.required">
+                                        Name is required.
+                                    </div>
+                                    <div *ngIf="passwordUpdateForm.controls.oldpassword.errors.minlength">
+                                        Name must be at least 4 characters long.
+                                    </div>
+                                    <div *ngIf="passwordUpdateForm.controls.oldpassword.errors.forbiddenName">
+                                        Name cannot be Bob.
+                                    </div>
+
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="newpassword">New Password:</label>
+                            <div class="col-sm-8">
+                                <input required type="password" class="form-control" id="email" name="newpassword"
+                                    formControlName="newpassword">
+                                <small
+                                    *ngIf="(passwordUpdateForm.controls.newpassword.dirty || passwordUpdateForm.controls.newpassword.touched ) && (passwordUpdateForm.controls.newpassword.errors !== null && passwordUpdateForm.controls.newpassword.errors.required)"
+                                    id="formerror" class="form-text text-muted" style="color: red;">
+                                    Required
+                                </small>
+                                <small
+                                    *ngIf="(passwordUpdateForm.controls.newpassword.dirty || passwordUpdateForm.controls.newpassword.touched ) && (passwordUpdateForm.controls.newpassword.errors !== null && passwordUpdateForm.controls.newpassword.errors.invalidPassword && !passwordUpdateForm.controls.newpassword.errors.required)"
+                                    id="formerror" class="form-text text-muted" style="color: red;">
+                                    Must be min 8 character long having an uppercase, lowercase and special character.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="confirmpassword">Confirm Password:</label>
+                            <div class="col-sm-8">
+                                <input required type="password" class="form-control" id="confirmpassword"
+                                    name="confirmpassword" formControlName="confirmpassword">
+                                <small
+                                    *ngIf="(passwordUpdateForm.controls.confirmpassword.dirty || passwordUpdateForm.controls.confirmpassword.touched) && (passwordUpdateForm.controls.confirmpassword.errors !== null &&  passwordUpdateForm.controls.confirmpassword.errors.required)"
+                                    id="formerror" class="form-text text-muted" style="color: red;">
+                                    Required
+                                </small>
+                                <small
+                                    *ngIf="(passwordUpdateForm.controls.confirmpassword.dirty || passwordUpdateForm.controls.confirmpassword.touched) && (passwordUpdateForm.controls.confirmpassword.errors === null && (passwordUpdateForm.controls.confirmpassword.value !== passwordUpdateForm.controls.newpassword.value))"
+                                    id="formerror" class="form-text text-muted" style="color: red;">
+                                    Passwords don't match.
+                                </small>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="remember"> Remember me</label>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-8">
+                                <button type="submit" class="btn btn-default" (click)="onSubmit()">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+
+
+
+                <!-- <div class="col-sm-10">
+                    <span class="control-fileupload">
+                        <label class="file-inout-label" for="file">{{fileName}}</label>
+                        <input type="file" id="file" (click)="onClick($event)" (change)="fileInput($event)"
+                            accept=".zip">
+                    </span>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" [disabled]="uploadingStatus === 'in-progress'" (click)="upload()" class="btn">
+                        <i class="fa fa-circle-o-notch fa-spin" style="font-size:12px"
+                            *ngIf="uploadingStatus === 'in-progress'"></i>
+                        <span *ngIf="uploadingStatus !== 'in-progress'">upload</span>
+                        <span *ngIf="uploadingStatus === 'in-progress'">uploading ..</span>
+                    </button>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+</div>
